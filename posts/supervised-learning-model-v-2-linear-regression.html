@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Supervised Learning Model V.2 – Linear Regression | The Third Blog</title>
+  <meta name="description" content="Reality check. This year has got away from me. Much like normal ‘new year’s resolutions’, the hype for a new project often diminishes throughout the year. In defence of myself, I’ve had a lot going on, but once again, it’s time to refocus.
+
+
+Rather than the Codecademy route, I’ve" />
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body class="theme-basho">
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="brand">
+        <a class="site-brand" href="../index.html">
+          <img class="site-logo" src="../assets/images/T3B_Long.png" alt="The Third Blog" />
+        </a>
+      </div>
+      <nav class="site-nav">
+        <a href="../index.html">All Posts</a>
+        <a href="../tags.html">Tags</a>
+        <a href="../feed.json">Feed</a>
+      </nav>
+    </header>
+    <main>
+    
+        <article class="post single">
+          <header class="post-header">
+            <div class="tag-stack"><span>artificial-intelligence</span><span>computer-science</span></div>
+            <p class="eyebrow">December 12, 2022</p>
+            <h1>Supervised Learning Model V.2 – Linear Regression</h1>
+            <p class="post-excerpt">Reality check. This year has got away from me. Much like normal ‘new year’s resolutions’, the hype for a new project often diminishes throughout the year. In defence of myself, I’ve had a lot going on, but once again, it’s time to refocus.
+
+
+Rather than the Codecademy route, I’ve</p>
+            <p class="meta-line">Jaz Worrell</p>
+            <p class="feature-image"><img src="../assets/images/8a2ea-09afff_3cb1098097ce4d099c785f9b5ff26bc4mv2.png.webp" alt="Supervised Learning Model V.2 – Linear Regression cover"></p>
+          </header>
+          <div class="post-body">
+            <p>Reality check. This year has got away from me. Much like normal ‘new year’s resolutions’, the hype for a new project often diminishes throughout the year. In defence of myself, I’ve had a lot going on, but once again, it’s time to refocus.</p>
+<p>Rather than the Codecademy route, I’ve decided to take another approach to this long-term machine learning quest. Mathematics and statistics seems to be a HUGE part of what it takes to succeed in this industry, so I thought I’d start there.</p>
+<p>The past few months I’ve read the following books:</p>
+<ul><li><strong>Introduction to Statistics</strong></li><li><strong>Algorithms to Live by, </strong>Brian Christian [<a href="https://www.goodreads.com/book/show/25666050-algorithms-to-live-by">Goodreads</a>]</li><li>Started the <strong>Calculus</strong> path on Brilliant [<a href="https://brilliant.org/courses/calculus-nutshell/">Brilliant Calculus</a>]</li><li>Daily Algebra Problems</li><li><strong>CodeWars</strong> Daily Challenge [<a href="https://www.codewars.com/users/JazW">JazW | Codewars</a>]</li></ul>
+<p>This year seems to have been a HUGE step forwards in terms of how AI and ML is impacting our lives. The likes of Mid Journey and more recently Chat GPT are set to revolutionise the world and I’ve found some very cool ways to implement these features in my new day-to-day workflow. (Another blog to follow). This is super exciting and was enough to reignite my love of this amazing new tech.</p>
+<p>I want to revisit my journey and get back on track. After delving back into mathematics and statistics – albeit very basic at this stage – I have opted for the [<a href="https://www.deeplearning.ai/courses/machine-learning-specialization/">Machine Learning Specialization – DeepLearning.AI</a>], by Andrew Ng.</p>
+<p>I am 4 weeks in and already enjoying the different approach. It’s quite math-heavy to what I’m used to, but it’s VERY interesting. The best part? – Week 2 had a project to build a Linear Regression model and I thought I’d also try it off-platform to see how I could implement this into my own project / make sure I had the tools setup correctly.</p>
+<p>I had some issues setting up my python again, but I’ve documented the quick fix here [<a href="https://www.thethirdblog.com/post/how-i-fixed-my-python-install">Fixing your python install</a>]. Info was spread all over the internet and it’s nice to have it in one place. So let’s get started:</p>
+<blockquote>What is supervised machine learning?</blockquote>
+<p><em>Explanation provided by CHAT GPT:</em></p>
+<p>Supervised machine learning is a type of machine learning algorithm that uses labeled data to train a model to make predictions. The model is trained on a set of labeled data, which contains both input features and output labels. The model is then tested on a set of unseen data to see how accurately it can predict the output labels…</p>
+<h2 id="the-project">The Project</h2>
+<p>The aim of this project was to create a supervised prediction model to calculate house sale profits in the US, based on population of city. This was so you could input the population of your city and receive an /idea/ of what you could sell your house for. Sounds simple enough…</p>
+<p>Python isn’t completely new to me, so I was able to follow, write and understand a lot of the code. We import datasets, run some analysis on the ’.shape’ of the data, then use matplotlib to visualise it. The steps I followed are documented below:</p>
+<p><strong>IDE</strong>: Visual Studio Code</p>
+<p><strong>Step 1</strong>. First I import the necessary libraries; <strong>numpy</strong>, <strong>matplotlib</strong>, <strong>math</strong> and <strong>copy</strong>.</p>
+<p><strong>Step 2</strong>. Next, I built out a dataset. The course provided some dummy data for use in the Jupyter notebook, but I recreated the dataset using a numpy array. Let’s say we have two variables (x1 and x2) – you can set it up the following way:</p>
+<p>x1 = np.array([1, 2, 3, 4, 5])<br>x2 = np.array([1, 2, 3, 4, 5])</p>
+<p><strong>Step 3</strong>. After this, it’s time to create the linear regression model and fit it to our data.</p>
+<p>This is where things got fun as I had to calculate both of these variables and translate them to code. The following image shows a nice summary of the formula needed (It’ll no doubt take some time to fully understand what is going on here…but hey it’s an ongoing process and I’m just at the start!):</p>
+<figure class="kg-card kg-image-card"><img src="../assets/images/273c3-09afff_2d7c0a687572481a9ea079bde5bd0c05mv2.jpg" class="kg-image" alt="" loading="lazy"></figure>
+<p>Essentially, I will summarise Linear Regression like this:</p>
+<blockquote>Linear Regression = fitting a straight line to your data</blockquote>
+<p>The <strong>goal of linear regression</strong> is to use the cost function to find the value of w AND b that minimizes J</p>
+<p><strong>Step 4</strong>. Plotting the original data and then the regression model to a scatter graph:</p>
+<p>This part was super cool! I’ve done some <a href="https://www.thethirdblog.com/post/matplotlib-turning-code-to-colour">basic work with matplotlib</a> in the past, but using it as part of a real project makes it 10x more fun. You can see immediately how running this type of analysis on a larger dataset would be incredibly useful.</p>
+<p>Something fun I learnt was adjusting how the points are plotted using the ‘marker’ and ‘c’ attributes. In this case it represents a RED ‘X’.</p>
+<p># Create a scatter plot of the data. <br>plt.scatter(x_train, y_train, marker=‘x’, c=‘r’) </p>
+<figure class="kg-card kg-image-card"><img src="../assets/images/0819b-09afff_c62dd9c36b624416a35c690ad62aca24mv2.webp" class="kg-image" alt="Original Dataset" loading="lazy"></figure>
+<p><strong>Step 5</strong>. Once the model has been fit to the data, we can then use it to make <strong>predictions</strong>.</p>
+<figure class="kg-card kg-image-card"><img src="../assets/images/34d8e-09afff_f572f3d7960d4b0fbe334a3791ca5934mv2.jpg" class="kg-image" alt="" loading="lazy"></figure>
+<p>This is a very basic model and one that relies on only a limited number of variables. Often, there are many more factors to consider such as sq. foot, amenities in the area, number of bathrooms etc. For this a different model will be needed.</p>
+<p>This isn’t my best blog, but I wanted to get something out and ‘on paper’. Recreating this assignment off-platform was actually SUPER useful for me and a great exercise to better understand the process. I had to setup my local python environment AND I went through the code again line by line.</p>
+<p>No doubt i’ll have to revisit this module at some point but for now we move onto classification models and logistic regression!</p>
+<p>T3B</p>
+<p></p>
+          </div>
+          <p class="back-link"><a href="../index.html">← Back to all posts</a></p>
+        </article>
+        
+    </main>
+    <footer class="site-footer">
+      <p>© 2025 The Third Blog — Generated from a Ghost export.</p>
+    </footer>
+  </div>
+</body>
+</html>

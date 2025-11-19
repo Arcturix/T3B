@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dancing with Algorithms: A Playful Introduction to Big O Notation | The Third Blog</title>
+  <meta name="description" content="Big O notation is an essential concept in computer science that helps measure an algorithm’s efficiency. Using dance moves as an analogy, I’ve explored different types of Big O notations to understand how time complexity varies with input size." />
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body class="theme-basho">
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="brand">
+        <a class="site-brand" href="../index.html">
+          <img class="site-logo" src="../assets/images/T3B_Long.png" alt="The Third Blog" />
+        </a>
+      </div>
+      <nav class="site-nav">
+        <a href="../index.html">All Posts</a>
+        <a href="../tags.html">Tags</a>
+        <a href="../feed.json">Feed</a>
+      </nav>
+    </header>
+    <main>
+    
+        <article class="post single">
+          <header class="post-header">
+            <div class="tag-stack"><span>computer-science</span></div>
+            <p class="eyebrow">April 14, 2023</p>
+            <h1>Dancing with Algorithms: A Playful Introduction to Big O Notation</h1>
+            <p class="post-excerpt">Big O notation is an essential concept in computer science that helps measure an algorithm’s efficiency. Using dance moves as an analogy, I’ve explored different types of Big O notations to understand how time complexity varies with input size.</p>
+            <p class="meta-line">Jaz Worrell</p>
+            <p class="feature-image"><img src="../assets/images/arcturis_2_flamenco_dancers_on_the_dance_floor_dynamic_angles_a_5c39fa59-5b99-4ef3-9b46-0e3428a6d23a.png.webp" alt="Dancing with Algorithms: A Playful Introduction to Big O Notation cover"></p>
+          </header>
+          <div class="post-body">
+            <p>I recently started an MSc in Computer Science and AI. With a pleasant introduction to JAVA and some basic programming tasks, it quickly took a devastating turn into ‘basic’ data structures and algorithms. Now when I say ‘basic’, it’s definitely not. As someone very unfamiliar with math, the ‘basic’ symbols and formula quickly started to confuse. As such, I’m in the process of doing my own mini-course on algebra, calculus and today Big O Notation. My hope is that as I transcribe my own process, it will help me to understand it. If it also helps you, then win: win.</p><p>If you’re a student like me and trying to wrap your head around Big O notation. The way it works and why it’s ESSENTIAL to know and understand, then you’re in the right place! Let’s take a look in a fun and beginner-friendly way:</p><p>Imagine you’re at a party, and the host just announced a dance competition. There are different moves, and each has its unique degree of difficulty. You and your friends want to find out which dance move is the most complex. In the world of computer science, we would use Big O notation to represent the complexity of these dance moves, just like we do with algorithms.</p><p>If you google for a Big O definition, you get this:</p><blockquote>“Big O notation is a mathematical notation that describes the limiting behavior of a function when the argument tends towards a particular value or infinity. It is a member of a family of notations invented by Paul Bachmann, Edmund Landau, and others, collectively called Bachmann–Landau notation or asymptotic notation.”— Wikipedia’s definition of Big O notation</blockquote><p>What does that even mean? <a href="https://www.freecodecamp.org/news/big-o-notation-why-it-matters-and-why-it-doesnt-1674cfa8a23c/">FreeCodeCamp</a> does a better job of simplifying and explains that ‘ Big O notation describes the <strong>complexity</strong> of your code using algebraic terms’.</p><p>Much better.</p><h2 id="the-dance-of-algorithms"><strong>The Dance of Algorithms</strong></h2><p>An algorithm is a series of steps used to solve a problem or perform a task. In computer science, we measure the efficiency of algorithms by looking at their time complexity, which is just a fancy term for the amount of time an algorithm takes to run.</p><p>Now, let’s get back to our dance party. <strong>Each dance move is like an algorithm</strong>, and <strong>the time it takes to perform the move is the algorithm’s time complexity</strong>. Just like dancers aim for smooth and efficient moves, we want our algorithms to be efficient too. And that’s where Big O notation comes in!</p><p>Big O notation is a way to express the upper bound (or worst-case scenario) of an algorithm’s time complexity. In other words, it helps us understand the maximum number of steps an algorithm might take as the size of its input increases.</p><p>Let’s say we have a simple dance move called “The Clap” that takes one step to perform. No matter how many people are dancing, it will always take one step to perform The Clap. In this case, we’d say the time complexity is O(1) because it’s constant and doesn’t change with the number of dancers.</p><p>But what if we have a more complex move, like “The Conga Line,” where everyone lines up and follows the leader? The time it takes to perform The Conga Line depends on the number of dancers. If there are n dancers, the time complexity is O(n) because it increases linearly with the number of dancers.</p><h2 id="exploring-other-big-o-notations"><strong>Exploring Other Big O Notations</strong></h2><p>There are many types of Big O notations, each representing different time complexities. Let’s look at a few more using our dance party analogy:</p><ol><li><strong>O(log n):</strong> Imagine a move called “The Binary Dance,” where you have to divide the dance floor in half, then in half again, and so on, until you find the one spot where you can stand. As the number of dancers increases, the number of steps only grows logarithmically.</li><li><strong>O(n^2):</strong> Picture “The Partner Swap,” where each dancer has to dance with every other dancer. The number of dance pairs grows quadratically with the number of dancers. The more people at the party, the more time it takes to complete the move!</li><li><strong>O(2^n):</strong> Let’s say there’s a move called “The Exponential Hustle,” where each dancer has to teach the move to two other dancers, who then teach it to two more dancers, and so on. The number of steps to complete this dance move increases exponentially with the number of dancers.</li></ol><p>The Big O Cheatsheat has some nice explanations and a more in-depth look at all the possibilities:</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="../assets/images/1_kfzyfut2okfjekjlceyvuq.jpeg?w=800" class="kg-image" alt loading="lazy" width="800" height="556"><figcaption>Complexity Growth Illustration from&nbsp;<a href="http://bigocheatsheet.com/" style="color: var(--wp--preset--color--primary); text-decoration: underline; cursor: pointer; text-decoration-thickness: 1px; text-underline-offset: 0.3em;">Big O Cheatsheet</a></figcaption></figure><p>Understanding Big O notation is essential because it helps us choose the most efficient algorithm for a particular task. It’s like choosing the best dance move for the song that’s playing – you don’t want to pick a move that takes too long or is too complicated when there’s a simpler and more point-efficient version.</p><p>Remember, the goal is to choose the right algorithm (or dance move) for the task at hand, and knowing the time complexity can make all the difference.</p><p>I hope this helps.</p><p>T3B</p>
+          </div>
+          <p class="back-link"><a href="../index.html">← Back to all posts</a></p>
+        </article>
+        
+    </main>
+    <footer class="site-footer">
+      <p>© 2025 The Third Blog — Generated from a Ghost export.</p>
+    </footer>
+  </div>
+</body>
+</html>

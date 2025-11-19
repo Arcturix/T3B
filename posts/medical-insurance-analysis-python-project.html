@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Medical Insurance Analysis – Python Project | The Third Blog</title>
+  <meta name="description" content="So, as I’ve been working through the Data Scientist career path on Codecademy (for some solid fundamentals), I skipped ahead to the first off-platform portfolio project. There was a lot of overlap at the start of the course on Python basics (I’m comfortable enough to not go throu" />
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body class="theme-basho">
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="brand">
+        <a class="site-brand" href="../index.html">
+          <img class="site-logo" src="../assets/images/T3B_Long.png" alt="The Third Blog" />
+        </a>
+      </div>
+      <nav class="site-nav">
+        <a href="../index.html">All Posts</a>
+        <a href="../tags.html">Tags</a>
+        <a href="../feed.json">Feed</a>
+      </nav>
+    </header>
+    <main>
+    
+        <article class="post single">
+          <header class="post-header">
+            <div class="tag-stack"><span>computer-science</span></div>
+            <p class="eyebrow">April 14, 2022</p>
+            <h1>Medical Insurance Analysis – Python Project</h1>
+            <p class="post-excerpt">So, as I’ve been working through the Data Scientist career path on Codecademy (for some solid fundamentals), I skipped ahead to the first off-platform portfolio project. There was a lot of overlap at the start of the course on Python basics (I’m comfortable enough to not go throu</p>
+            <p class="meta-line">Jaz Worrell</p>
+            <p class="feature-image"><img src="../assets/images/img_0008.png.webp" alt="Medical Insurance Analysis – Python Project cover"></p>
+          </header>
+          <div class="post-body">
+            <p>So, as I’ve been working through the Data Scientist career path on Codecademy (<em>for some solid fundamentals</em>), I skipped ahead to the first off-platform portfolio project. There was a lot of overlap at the start of the course on Python basics (I’m comfortable enough to not go through this again), so I thought I would learn the rest as I went along and fill any gaps.</p>
+<p>I’m placing a focus on off-platform work as this will most closely match any day to day work I get in a real job. I also need to be as comfortable with these Python tools as possible and not rely on the Codecademy interface. This post will document my process:</p>
+<p><strong>Day 1 – Project Scope and plan of action</strong></p>
+<p>The aim of the project is to take a raw CSV file containing medical insurance payout information, manipulate the data into something readable, analyse it and draw some conclusions. I currently work in the medical field so this is actually something that I can see happening in a business. After reviewing the data, there are over a thousand rows of; client age, sex, bmi, children, smoker (y/n), region and charges on the account.</p>
+<p>For the sake of tracking my progress I identified 5 objectives for the data:</p>
+<ol><li><strong>Average age of client</strong> <em>(Let’s ease myself into this with an easy one)</em></li><li><strong>How do the number of children impact the client profile?</strong></li><li><strong>Charges per area</strong> <em>(I might be able to visualise this nicely with <a href="https://www.thethirdblog.com/post/matplotlib-turning-code-to-colour"><em>MatPlotLib</em></a>)</em></li><li><strong>Which gender has the highest charges? </strong><em>(Then I might be able to break this down into age bracket)</em></li><li><strong>Average age of client with 1 child or more</strong>. (This kind of data could be used when targeting new customers online etc)</li></ol>
+<p>Immediately, this has identified some areas that I need to brush up on; <strong>Using the mac terminal</strong>, working in <strong>Jupyter Notebooks</strong>, maybe <strong>classes?</strong>, working <strong>with files</strong> and <strong>manipulating data with pandas</strong>. Looks like a lot – let’s get started.</p>
+<h2 id="using-the-mac-terminal">Using the Mac Terminal.</h2>
+<p>I’d already installed the necessary files last year, so to launch a new notebook you just put:</p>
+<p># Launch a new Notebook<br>jupyter notebook# Lists what is in the current folder<br>ls# Opens a [folder_name]<br>cd [folder_name]</p>
+<h2 id="working-in-jupyter-notebooks">Working in Jupyter Notebooks</h2>
+<p>Installing and opening jupyter is the hardest part of this. Once you are in the tool it’s quite self explanatory and very convenient. I also have PyCharm installed which allows me to code locally but this platform is a lot more accessible.</p>
+<p>Day 2 – Concept Review</p>
+<h2 id="classes-revision">Classes Revision</h2>
+<p>Reviewing old topics and working through the advanced python course on DataCamp, I was always having trouble with classes. Similar to the way loops confused me at the start, it’s now the same with this. I had to go right back and review this from the beginning and it wasn’t easy.</p>
+<p>I now understand how to build out classes with correct structure, but this was in a managed curriculum setting. Going forward it will be important to understand when and how to best use these within my own code. I can follow along with a guide, but implementing these myself will be the challenge. It’s also going to take time to learn the correct class syntax. I have notes now but it’s disheartening every time I need to look it up. I know this will come with time – understanding the WHEN/ HOW is more important for now.</p>
+<p>To begin, <a href="https://towardsdatascience.com/enhance-your-python-project-code-with-classes-5a19d0e9f841#:~:text=A%20Python%20class%20is%20like,object%20is%20initiated%20from%20scratch">towards_data_science</a> has a nice explanation of what a class is:</p>
+<blockquote>A Python class is like an outline for creating a new object. An object is anything that you wish to manipulate or change while working through the code. Every time a class object is instantiated, which is when we declare a variable, a new object is initiated from scratch. Class objects can be used over and over again whenever needed.</blockquote>
+<p>Codecademy has a nice <a href="https://www.codecademy.com/learn/paths/data-science/tracks/dscp-python-fundamentals/modules/dscp-python-classes/cheatsheet">classes cheatsheet</a> that I can refer to here. It will definately be worth doing some addition practice exercises on this before I proceed past this project.</p>
+<h2 id="working-with-files">Working with files</h2>
+<p>Working with files and scraping data from the web is one of the most exciting parts for me. It’s an easy way to see how my new python skills can be used in the ‘real’ world environment. Due to my professional background, I’ve always been comfortable in a spreadsheet so these skills tie together very well. Part of this project involves downloading, formatting and analysing a CSV file, so I needed to revise this topic.</p>
+<p>…after doing some revision here, I’ve been able to import and view the content of the CSV file. First problem solved, now onto the next one. How can I manipulate this data into lists or dictionaries that I can use? <em>This I believe is where Pandas come in.</em> I think I can use them to move around and structure the data as I’d like. Then with NumPy (numerical python) to make calculations and MatPlotLib to visualise it. But…I can also do the first part of this with normal lists too.</p>
+<p><strong>#import the insurance costs CSV file</strong><br>import csv<br>with open("insurance.csv") as insurance_raw:<br>    insurance_raw = csv.DictReader(insurance_raw)<br>    for row in insurance_raw:<br>        print(row)</p>
+<p>Although I remember Pandas from a previous course – the track hasn’t actually covered this topic yet. There must be a way I can disseminate this data using the concepts I’m already familiar with so I’m going to look a little deeper – If this fails, i’ll keep investigating my way and see where it goes…</p>
+<p><em>…a few hours later</em></p>
+<p>I was able to iterate through the spreadsheet and .append the info I needed into a new python list. For ages I had issues making calculations on the list until I realised I needed to convert the age strings to integers. I was able to do this with a list comprehension and then proceed. From here, it was simple math to calculate the average age:</p>
+<p>average_age_of_client = sum(age_of_client_int) / len(age_of_client_int)</p>
+<p><strong>OBJECTIVE ONE: Average age of client</strong>: 39. DONE</p>
+<p>Day 3 – Digging into file manipulation</p>
+<p>The next step was to do the same ‘data export’ but with different data points; in this case <em>number of children</em> and <em>total amount of charges</em>. I skipped ahead of my plan slightly, but chose to try and plot this information visually using MatPlotLib. I had to come off jupyter notebooks and into PyCharm for this as I couldn’t figure out how to import the library.</p>
+<p>After combining two lists into a dictionary, then manipulating the data types from strings &gt; floats &gt; ints, (<em>this sounds like a breeze, but it actually took me hours to realise the problem!</em>) I was able to plot some basic charts. I looked at scatter diagrams and bar charts to see what would display the best and opted on this with some fancy formatting:</p>
+<figure class="kg-card kg-image-card"><img src="../assets/images/ed8ae-09afff_ec352a9242194a8b87162dec281379c3mv2.png" class="kg-image" alt="" loading="lazy"></figure>
+<h3 id="verification">Verification</h3>
+<p>After looking into the data manually to check some out my output and verify my code, there was a problem. My list: dictionary comprehension (after converting both to INT lists wasn’t operating as expected). Individually, the lists were correct. As a dictionary, they were not. <strong>It turns out I did everything wrong.</strong></p>
+<p>List1: [0,1,3,0,0,0,1,3,2, ...]<br>List2: [16884, 1725, 4449, 2194, 3866, ...]<br>Dict1: {0:<strong>29141</strong>, 1:<strong>9377</strong>, 3:<strong>10600</strong>, ...] <br><br>#it looks like the key is correct, but the value is wrong</p>
+<p>After some investigation and some help from the friendly users on the <a href="https://discuss.codecademy.com/t/zipped-dict-random-numbers/665432">Codecademy forum</a>, I realised <strong>dictionaries need a unique key</strong> and are <strong>unordered</strong>. As a result, my new dictionary was only 5 keys long; data for 0 – 5 children – each instance overwriting the last. What a mess…</p>
+<p><strong>Onto the fix:</strong> I defined a new function that would iterate and count through my child list then add a running total to one_child, two_child, three_child etc attributes. I could then combine this with a simple [0,1,2,3,4,5] (number of children) list to create the dictionary of my dreams. This shows number of kids as the key and a count of clients with those kids as the value. Just what I need for my chart!</p>
+<p>{0: 574, 1: 324, 2: 240, 3: 157, 4: 25, 5: 18}</p>
+<figure class="kg-card kg-image-card"><img src="../assets/images/9b405-09afff_61fbd2ea566e4dc8bb004a9f03c5a073mv2.png" class="kg-image" alt="" loading="lazy"></figure>
+<blockquote>In hindsight, the analysis of these data points is pretty basic and arguably useless… However, objective 2 has taught me a LOT of valuable lessons. I need a LOT more practice implementing python basics and a LOT of practice writing more condensed and simplified code.</blockquote>
+<p>OBJECTIVE TWO: <strong>How do the number of children impact the client profile? DONE</strong></p>
+<p><strong>As you can see from the graph, the less children you have, the greater chance you’ll have to be a client. Most of the users have zero children (which may be most profitable for the business)</strong></p>
+<h2 id="summary">Summary</h2>
+<p>Today I was humbled and there is a lot I need to review. This is hours of work with very little to show. I could complete this entire project in excel in 20 minutes. The problem solving is bliss to me, I really enjoy it. However I need to spend more time mastering the fundamentals so it’s less about wishing with code and more about planning my overall approach then executing.</p>
+<p>I didn’t even realise that dictionaries had to have unique keys and this threw me off for a long time trying to find a solution.</p>
+<p>As a result, i’m going to stop this project here while I review some more of the fundamentals. I will continue my Data Scientist course on codecademy but keep coding off platform as much as possible. I found a super cool site called <a href="https://www.codewars.com/">codewars</a> that might be a good place to start.</p>
+<p>Thanks for reading.</p>
+<p>T3B</p>
+<p></p>
+          </div>
+          <p class="back-link"><a href="../index.html">← Back to all posts</a></p>
+        </article>
+        
+    </main>
+    <footer class="site-footer">
+      <p>© 2025 The Third Blog — Generated from a Ghost export.</p>
+    </footer>
+  </div>
+</body>
+</html>

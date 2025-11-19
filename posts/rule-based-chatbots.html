@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rule-Based Chatbots | The Third Blog</title>
+  <meta name="description" content="This blog post was originally titled ChatBots…but I soon realised there was a LOT more to unpack than I first imagined. It’s definitely a topic that needs to be broken down, so let’s start with the 3 different types: rule-based chatbots, retrieval-based chatbots and deep-learning" />
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body class="theme-basho">
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="brand">
+        <a class="site-brand" href="../index.html">
+          <img class="site-logo" src="../assets/images/T3B_Long.png" alt="The Third Blog" />
+        </a>
+      </div>
+      <nav class="site-nav">
+        <a href="../index.html">All Posts</a>
+        <a href="../tags.html">Tags</a>
+        <a href="../feed.json">Feed</a>
+      </nav>
+    </header>
+    <main>
+    
+        <article class="post single">
+          <header class="post-header">
+            <div class="tag-stack"><span>computer-science</span><span>artificial-intelligence</span></div>
+            <p class="eyebrow">April 06, 2022</p>
+            <h1>Rule-Based Chatbots</h1>
+            <p class="post-excerpt">This blog post was originally titled ChatBots…but I soon realised there was a LOT more to unpack than I first imagined. It’s definitely a topic that needs to be broken down, so let’s start with the 3 different types: rule-based chatbots, retrieval-based chatbots and deep-learning</p>
+            <p class="meta-line">Jaz Worrell</p>
+            <p class="feature-image"><img src="../assets/images/arcturis_talking_to_a_robot_black_and_white_line_art_dc3571bb-1aae-4635-beb7-b13076e65a46.png-2.webp" alt="Rule-Based Chatbots cover"></p>
+          </header>
+          <div class="post-body">
+            <p>This blog post was originally titled ChatBots…but I soon realised there was a LOT more to unpack than I first imagined. It’s definitely a topic that needs to be broken down, so let’s start with the 3 different types: <strong>rule-based chatbots</strong>, retrieval-based chatbots and deep-learning/ generative chatbots (fig3). The last is something I’m aspiring to, but let’s follow the process and learn the basics first.</p>
+<p>For reference, I am following the <a href="https://www.codecademy.com/learn/paths/build-chatbots-with-python">Build Chatbots with Python</a> path on Codecademy.</p>
+<p>I’ll be honest – things started to get really complicated and I had to take it super slow to get a solid understanding of the concepts. Either way, I got through this section, made some fancy notes and have started my own off-platform build. Super cool stuff!</p>
+<figure class="kg-card kg-image-card"><img src="../assets/images/8c15c-09afff_97897fa008b84cdd9db34e1258f983e2mv2.png" class="kg-image" alt="" loading="lazy"></figure>
+<p>Building an <strong><em>if this then that</em></strong> style bot is actually pretty simple. Once you understand the syntax you can keep adding new rules and processes to create the system you want. Small snippets of code is one thing, but as you start to build out programs I’ve found it VERY useful to annotate with <a href="https://manage.wix.com/dashboard/1288440a-1d4f-4988-869b-e9d23ae19c05/blog/posts/search/.hash.comments?referralInfo=sidebar">#comments</a> as things can get confusing and fast!</p>
+<p>I am working on perfecting a coffee ordering system that hopefully I can share with the blog soon enough. (<em>I may have to figure out GitHub which is probably a whole project in itself…</em>)</p>
+<p>Essentially you can plan this type of chatbot in a huge decision tree then code out all the responses. Sprout Social have a similar ‘<a href="https://support.sproutsocial.com/hc/en-us/articles/115003059703-Bot-Builder">bot-builder</a>‘ function that i’ve used in the past. It’s also in a nice GUI (graphical user interface) to make it more accessible. In the future this could also be a nice little side project.</p>
+<h2 id="text-preprocessing">Text Preprocessing</h2>
+<p>Where things started to get REALLY interesting was learning how to preprocess text! What’s great about this is I can scrape content from a webpage, pull data from a API, even <strong>input via voice recognition;</strong> process it so it can be read by a computer and then return a result. This is almost a mini-alexa style bot and is super exciting.</p>
+<p>Before I get into some of the process, here are my notes on this topic:</p>
+<figure class="kg-card kg-image-card"><img src="../assets/images/1.webp?w=1024" class="kg-image" alt="" loading="lazy" width="2220" height="1570"></figure>
+<figure class="kg-card kg-image-card"><img src="../assets/images/2.webp?w=1024" class="kg-image" alt="" loading="lazy" width="2220" height="1570"></figure>
+<figure class="kg-card kg-image-card"><img src="../assets/images/3.webp?w=1024" class="kg-image" alt="" loading="lazy" width="2124" height="1502"></figure>
+<p>Essentially, breaking down any text into a format we can read requires a few different steps. To execute any of this requires the NLTK (Natural Language Toolkit) platform. An explanation of which can be found on their site, <a href="https://www.nltk.org/">nltk.org</a>:</p>
+<blockquote>NLTK is a leading platform for building Python programs to work with human language data. It provides easy-to-use interfaces to <a href="https://www.nltk.org/nltk_data/">over 50 corpora and lexical resources</a> such as WordNet, along with a suite of text processing libraries for classification, tokenization, stemming, tagging, parsing, and semantic reasoning, wrappers for industrial-strength NLP libraries, and an active <a href="https://groups.google.com/group/nltk-users">discussion forum</a>.</blockquote>
+<p>All of these steps are known as <strong>Text Preprocessing</strong> and involve some of the following:</p>
+<ul><li><strong>Noise Removal</strong> – This is exactly what it sounds like and involves removing any ‘crap’ that comes along with scraped text. This could be HTML tags, formatting markup, quotation marks etc.</li></ul>
+<p>As an example, after importing <strong>re</strong>, we can run the following to remove all H1 tags in a text:</p>
+<pre><code>re.sub(r"&lt;.?H1&gt;", "", variable_string)</code></pre>
+<p>The r is required to indicate RAW text.</p>
+<ul><li><strong>Tokenization*</strong> – This is the process of breaking up a large volume of text into manageable words (word.tokenize) or sentences (sent.tokenize). These are referred to as tokens.</li></ul>
+<p>After importing tokenize, you can call the function using the following:</p>
+<pre><code>from nltk.tokenize import word_tokenize
+variable = word_tokenize(variable_string)</code></pre>
+<p>This creates a new variable that tokenizes the content from variable_string.</p>
+<ul><li><strong>Normalization*</strong> – described best from Codecademy: In natural language processing, <em>normalization</em> encompasses many text preprocessing tasks including stemming, lemmatization, upper or lowercasing, and stopwords removal.</li></ul>
+<p>Checkout my notes for a deeper look into various normalization techniques. I plan to use all of these features in my off-site build.</p>
+<p>Many of these normalization features allow you to give greater meaning to some parts of the text and eliminate the ‘filler words’. This is super useful when you need to disseminate and analyse user input. It’s also very useful for validation.</p>
+<p><em>*Side note – the american english spelling of these words really frustrates me.</em></p>
+<figure class="kg-card kg-image-card"><img src="../assets/images/6569b-09afff_943477940da041a18ee055c9d80a16b1mv2.png" class="kg-image" alt="" loading="lazy"></figure>
+<p>I’ve included the above chart as reference for the future. Currently i’m working on a rule-based, closed domain chatbot built on a simple dialog tree. The end goal is to build a generative, open domain, AI powered bot.</p>
+<p>I’m only half way through this bot-building course on Codecademy so no doubt it gets into the more complex stuff. Writing my notes alongside these review posts is working great in terms of understanding the concepts.</p>
+<p>Hopefully it helps!</p>
+<p>T3B</p>
+<p></p>
+          </div>
+          <p class="back-link"><a href="../index.html">← Back to all posts</a></p>
+        </article>
+        
+    </main>
+    <footer class="site-footer">
+      <p>© 2025 The Third Blog — Generated from a Ghost export.</p>
+    </footer>
+  </div>
+</body>
+</html>

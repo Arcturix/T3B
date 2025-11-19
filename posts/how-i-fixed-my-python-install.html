@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>How I fixed my Python install | The Third Blog</title>
+  <meta name="description" content="You know I’ve been messing around in Python all year.
+
+
+Well, I went digging into source files and screwed everything up…
+
+
+Due to the release of GitHub CoPilot, I switched my IDE from pycharm to visual studio code. After I got used to the new interface, any library imports weren" />
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body class="theme-basho">
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="brand">
+        <a class="site-brand" href="../index.html">
+          <img class="site-logo" src="../assets/images/T3B_Long.png" alt="The Third Blog" />
+        </a>
+      </div>
+      <nav class="site-nav">
+        <a href="../index.html">All Posts</a>
+        <a href="../tags.html">Tags</a>
+        <a href="../feed.json">Feed</a>
+      </nav>
+    </header>
+    <main>
+    
+        <article class="post single">
+          <header class="post-header">
+            <div class="tag-stack"><span>computer-science</span></div>
+            <p class="eyebrow">December 09, 2022</p>
+            <h1>How I fixed my Python install</h1>
+            <p class="post-excerpt">You know I’ve been messing around in Python all year.
+
+
+Well, I went digging into source files and screwed everything up…
+
+
+Due to the release of GitHub CoPilot, I switched my IDE from pycharm to visual studio code. After I got used to the new interface, any library imports weren</p>
+            <p class="meta-line">Jaz Worrell</p>
+            <p class="feature-image"><img src="../assets/images/arcturis_python_on_a_laptop_line_art_black_and_white_3bfa3672-4049-4f68-8804-abed745007a1.png" alt="How I fixed my Python install cover"></p>
+          </header>
+          <div class="post-body">
+            <p>You know I’ve been messing around in Python all year.</p>
+<p>Well, I went digging into source files and screwed everything up…</p>
+<p>Due to the release of GitHub CoPilot, I switched my IDE from pycharm to visual studio code. After I got used to the new interface, any library imports weren’t working (/matplotlib, numpy/, etc).</p>
+<p>I had to browse the web for various fixes and re-installation so posting it here incase it helps someone else:</p>
+<h2 id="step-1-%E2%80%93-reset">STEP 1 – Reset</h2>
+<p>Reinstall Mac iOS – Launch in recovery mode and reinstall to HD.</p>
+<p><strong>TROUBLESHOOT</strong>: Check login shell is: /bin/zsh</p>
+<p><strong>FIX</strong>: System Settings&gt; Users &amp; Groups &gt; (Right Click User) Advanced Options</p>
+<h2 id="step-2-%E2%80%93-install-python">STEP 2 – Install Python</h2>
+<p><strong>TROUBLESHOOT</strong>: No Python Installed</p>
+<p><strong>FIX</strong>: Download From website and follow instructions. <a href="https://www.python.org/downloads/">https://www.python.org/downloads/</a></p>
+<p>Open Terminal and run:</p>
+<pre><code>python —version</code></pre>
+<p>to check it’s installed successfully.</p>
+<p><strong>TERMINAL ERROR</strong>: xcrun: error: invalid active developer path</p>
+<p><strong>FIX</strong>: Update/ Install Xcode.</p>
+<p>Open Terminal and run:</p>
+<pre><code>xcode-select —install</code></pre>
+<h2 id="step-3-%E2%80%93-install-pip">STEP 3 – Install Pip</h2>
+<p><strong>TROUBLESHOOT</strong>: No pip. (Need this to install other libraries)</p>
+<p><strong>FIX</strong>: Install Pip</p>
+<p>Open Terminal and run:</p>
+<pre><code>curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py</code></pre>
+<p>Run:</p>
+<pre><code>python3 get-pip.py</code></pre>
+<p>Check it’s installed successfully and run:</p>
+<pre><code>pip3 —version
+pip —version</code></pre>
+<h2 id="step-4-%E2%80%93-install-matplotlib">STEP 4 – Install Matplotlib</h2>
+<p><strong>TROUBLESHOOT</strong>: No Matplotlib</p>
+<p><strong>FIX</strong>: Install Matplotlib</p>
+<p>Open Terminal and run:</p>
+<pre><code>pip install matplotlib</code></pre>
+<p><strong>TROUBLESHOOT</strong>: Needs Certifi</p>
+<p><strong>FIX</strong>: Install Certificates [https://pypi.org/project/certifi/]</p>
+<p>Open Terminal and run:</p>
+<pre><code>pip install certifi</code></pre>
+<p>—</p>
+<p>I hope this also works for you.</p>
+<p>T3B</p>
+          </div>
+          <p class="back-link"><a href="../index.html">← Back to all posts</a></p>
+        </article>
+        
+    </main>
+    <footer class="site-footer">
+      <p>© 2025 The Third Blog — Generated from a Ghost export.</p>
+    </footer>
+  </div>
+</body>
+</html>
